@@ -1,0 +1,46 @@
+<%= form_with model: @credit_card, url: credit_cards_path, local: true, class:'info' do |form| %>
+  <div class='form-style'>
+
+    <h4>Information from Credit Card</h4>
+
+    <div class='row'>
+      <div class='col'>
+        <div class='form-group'>
+          <%= form.label :id %>
+          <%= form.text_field :id, class:'form-control' %>
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-group'>
+          <%= form.label :brand %>
+          <%= form.text_field :brand, class:'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col'>
+        <div class='form-group'>
+          <%= form.label :expiration_month %>
+          <%= form.text_field :expiration_month, class:'form-control' %>
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-group'>
+          <%= form.label :expiration_year %>
+          <%= form.text_field :expiration_year, class:'form-control' %>
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-group'>
+          <%= form.label :default_for_payment %>
+          <%= form.text_field :default_for_payment, class:'form-control' %>
+        </div>
+      </div>
+    </div>
+    
+    <div class='actions'>
+      <%= form.submit 'Salvar', class:'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

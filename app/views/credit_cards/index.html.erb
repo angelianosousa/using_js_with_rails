@@ -1,0 +1,20 @@
+<b>Credit Cards</b>
+
+<%= select_tag "credit_card", options_from_collection_for_select(@credit_cards, "id", "brand"), class:"credit_card_selection", style:"margin-bottom:20px;" %>
+
+<div class="credit_card_info">
+  <%= render partial: 'form', credit_card: @credit_card %>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+
+<script>
+  $('.credit_card_selection').on('change', function () {
+    let credit_card_id = $(this).val();
+    $.ajax({
+      data: {credit_card_id: credit_card_id},
+      url: `/credit_cards/${credit_card_id}`,
+      type: 'GET'
+    });
+  });
+</script>
